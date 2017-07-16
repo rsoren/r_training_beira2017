@@ -51,8 +51,8 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
     <tr>
         <td white-space: nowrap>Dia 1, 17 de julho</td>
         <td>Familiarize-se com RStudio, arquivos de leitura / gravação, operações em "data frames" </td>
-        <td>Resumo</td>
-        <td>Código</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/tree/master/day1">Resumo</a></td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day1/day1_script.R">Código</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 2, 18 de julho</td>
