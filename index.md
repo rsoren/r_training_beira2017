@@ -52,8 +52,8 @@ Many software options are available for data analysis, but you might prefer R fo
     <tr>
         <td white-space: nowrap>Day 1, Monday, June 17</td>
         <td>Get familiar with RStudio, read/write files, operations on data frames</td>
-        <td>Summary</td>
-        <td>Code</td>
+        <td> [Summary](day1/README.md) </td>
+        <td> [Code](day1/day1_script.R) </td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 2, Tuesday, June 18</td>
