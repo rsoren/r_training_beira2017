@@ -50,61 +50,61 @@ Many software options are available for data analysis, but you might prefer R fo
 
 <table align="center">
     <tr>
-        <td white-space: nowrap>Day 1, Monday, June 17</td>
+        <td white-space: nowrap>Day 1, Monday, July 17</td>
         <td>Get familiar with RStudio, read/write files, operations on data frames</td>
-        <td> [Summary](day1/README.md) </td>
-        <td> [Code](day1/day1_script.R) </td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/tree/master/day1">Summary</a></td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day1/day1_script.R">Code</a></td>
     </tr>
     <tr>
-        <td white-space: nowrap>Day 2, Tuesday, June 18</td>
+        <td white-space: nowrap>Day 2, Tuesday, July 18</td>
         <td>TBD</td>
         <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Day 3, Wednesday, June 19</td>
+        <td white-space: nowrap>Day 3, Wednesday, July 19</td>
         <td>TBD</td>
         <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Day 4, Thursday, June 20</td>
+        <td white-space: nowrap>Day 4, Thursday, July 20</td>
         <td>TBD</td>
         <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Day 5, Friday, June 21</td>
+        <td white-space: nowrap>Day 5, Friday, July 21</td>
         <td>TBD</td>
         <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Day 6, Monday, June 24</td>
+        <td white-space: nowrap>Day 6, Monday, July 24</td>
         <td>TBD</td>
         <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Day 7, Tuesday, June 25</td>
+        <td white-space: nowrap>Day 7, Tuesday, July 25</td>
         <td>TBD</td>
         <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Day 8, Wednesday, June 26</td>
+        <td white-space: nowrap>Day 8, Wednesday, July 26</td>
         <td>TBD</td>
         <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Day 9, Thursday, June 27</td>
+        <td white-space: nowrap>Day 9, Thursday, July 27</td>
         <td>TBD</td>
         <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Day 10, Friday, June 28</td>
+        <td white-space: nowrap>Day 10, Friday, July 28</td>
         <td>TBD</td>
         <td>Summary</td>
         <td>Code</td>
@@ -133,7 +133,7 @@ Many software options are available for data analysis, but you might prefer R fo
     http://www.atmos.albany.edu/facstaff/timm/ATM315spring14/R/The%20Art%20of%20R%20Programming.pdf </dd>
     
   <dt>Data Science certificate from Johns Hopkins University</dt>
-    <dd>You can take these courses for free on Coursera.org. I highly recommend the first 4 courses in the series: "The Data Scientists' Toolbox", "R Programming", "Getting and Cleaning Data" and "Exploratory Data Analysis". If you're interested hypothesis testing (e.g. getting p-values and confidence intervals), also check out the courses "Statistical Inference" and "Regression Models". <br />
+    <dd>You can take these courses for free on Coursera.org. I recommend the first 4 courses in the series: "The Data Scientists' Toolbox", "R Programming", "Getting and Cleaning Data" and "Exploratory Data Analysis". If you're interested hypothesis testing (e.g. getting p-values and confidence intervals), also check out the courses "Statistical Inference" and "Regression Models". <br />
     https://www.coursera.org/specializations/jhu-data-science</dd>
     
 </dl>
