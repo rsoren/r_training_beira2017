@@ -49,61 +49,61 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
 
 <table align="center">
     <tr>
-        <td white-space: nowrap>Dia 1, 17 de junho</td>
+        <td white-space: nowrap>Dia 1, 17 de julho</td>
         <td>Familiarize-se com RStudio, arquivos de leitura / gravação, operações em "data frames" </td>
         <td>Resumo</td>
         <td>Código</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Dia 2, 18 de junho</td>
+        <td white-space: nowrap>Dia 2, 18 de julho</td>
         <td>TBD</td>
         <td>Resumo</td>
         <td>Código</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Dia 3, 19 de junho</td>
+        <td white-space: nowrap>Dia 3, 19 de julho</td>
         <td>TBD</td>
         <td>Resumo</td>
         <td>Código</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Dia 4, 20 de junho</td>
+        <td white-space: nowrap>Dia 4, 20 de julho</td>
         <td>TBD</td>
         <td>Resumo</td>
         <td>Código</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Dia 5, 21 de junho</td>
+        <td white-space: nowrap>Dia 5, 21 de julho</td>
         <td>TBD</td>
         <td>Resumo</td>
         <td>Código</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Dia 6, 24 de junho</td>
+        <td white-space: nowrap>Dia 6, 24 de julho</td>
         <td>TBD</td>
         <td>Resumo</td>
         <td>Código</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Dia 7, 25 de junho</td>
+        <td white-space: nowrap>Dia 7, 25 de julho</td>
         <td>TBD</td>
         <td>Resumo</td>
         <td>Código</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Dia 8, 26 de junho</td>
+        <td white-space: nowrap>Dia 8, 26 de julho</td>
         <td>TBD</td>
         <td>Resumo</td>
         <td>Código</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Dia 9, 27 de junho</td>
+        <td white-space: nowrap>Dia 9, 27 de julho</td>
         <td>TBD</td>
         <td>Resumo</td>
         <td>Código</td>
     </tr>
     <tr>
-        <td white-space: nowrap>Dia 10, 28 de junho</td>
+        <td white-space: nowrap>Dia 10, 28 de julho</td>
         <td>TBD</td>
         <td>Resumo</td>
         <td>Código</td>
