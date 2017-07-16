@@ -1,5 +1,5 @@
 ## Bem-vindo à Análise de Dados com R!  
-Beira, Moçambique - 17 de junho a 28 de junho de 2017  
+Beira, Moçambique - 17 de julho a 28 de julho de 2017  
 [Click here](index.md) to view this page in English. 
 
 &nbsp;&nbsp;[Introdução](#intro)  
@@ -148,4 +148,4 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
 Nome: Reed Sorensen  
 Email: rsoren@uw.edu
 
-Sou um estudante de doutorado na Universidade de Washington, visitando Moçambique como parte de uma oportunidade de estudo de três meses no exterior. Com antecedentes em epidemiologia, meu trabalho se concentra na compreensão dos padrões de doença e mortalidade em uma população, e usando métodos quantitativos para determinar as formas mais eficazes de tornar as pessoas mais saudáveis. Por exemplo, no Instituto de Métricas e Avaliação de Saúde (IHME), faço simulações para prever os custos e os benefícios para a saúde que resultariam de um programa ou política proposta. Da mesma forma, minha dissertação se concentrará em estimar o quanto da carga de doenças futuras de uma população poderia ser evitada. Eu uso R para o meu trabalho diário desde 2011 e me considere um defensor da ciência aberta e pesquisas reprodutíveis. Eu vivo em Seattle com minha esposa, Lisa e nosso golden retriever, Oliver.
+Sou um estudante de doutorado na Universidade de Washington, visitando Moçambique como parte de uma oportunidade de estudo de três meses no exterior. Com antecedentes em epidemiologia, meu trabalho se concentra na compreensão dos padrões de doença e mortalidade em uma população, e usando métodos quantitativos para determinar as formas mais eficazes de tornar as pessoas mais saudáveis. Por exemplo, no Institute for Health Metrics and Evaluation (IHME), faço simulações para prever os custos e os benefícios para a saúde que resultariam de um programa ou política proposta. Da mesma forma, minha dissertação se concentrará em estimar o quanto da carga de doenças futuras de uma população poderia ser evitada. Eu uso R para o meu trabalho diário desde 2011 e me considere um defensor da ciência aberta e pesquisas reprodutíveis. Eu vivo em Seattle com minha esposa, Lisa e nosso golden retriever, Oliver.
