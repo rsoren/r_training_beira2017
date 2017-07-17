@@ -1,5 +1,5 @@
 ## Welcome to Data Analysis with R!  
-Beira, Mozambique - June 17 to June 28, 2017  
+Beira, Mozambique - July 17 to July 28, 2017  
 [Clique aqui](index_portuguese.md) para ver esta página em português.
 
 &nbsp;&nbsp;[Introduction](#intro)  
@@ -135,6 +135,10 @@ Many software options are available for data analysis, but you might prefer R fo
   <dt>Data Science certificate from Johns Hopkins University</dt>
     <dd>You can take these courses for free on Coursera.org. I recommend the first 4 courses in the series: "The Data Scientists' Toolbox", "R Programming", "Getting and Cleaning Data" and "Exploratory Data Analysis". If you're interested hypothesis testing (e.g. getting p-values and confidence intervals), also check out the courses "Statistical Inference" and "Regression Models". <br />
     https://www.coursera.org/specializations/jhu-data-science</dd>
+    
+  <dt>Other resources, including some in Portuguese</dt>
+    <dd>This site links to many resources (os escritos em português começam no número 25). <br />
+        https://producaoanimalcomr.wordpress.com/2015/12/15/livros-r-gratuitos-para-downloads/ </dd>
     
 </dl>
 
