@@ -135,6 +135,11 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
     <dd>Pode seguir esses cursos gratuitamente no Coursera.org. Eu recomendo os primeiros 4 cursos da série: "The Data Scientist's Toolbox", "R Programming", "Getting and Cleaning Data" e "Exploratory Data Analysis". Se você estiver interessado em testes de hipóteses (por exemplo, obter p-value e intervalo de confiança), veja tambem os cursos "Inferência estatística" e "Modelos de regressão".<br />
     https://www.coursera.org/specializations/jhu-data-science</dd>
     
+  <dt>Recursos em português</dt>
+    <dd>Este site contém links para muitos recursos (os escritos em português começam no número 25). <br />
+        https://producaoanimalcomr.wordpress.com/2015/12/15/livros-r-gratuitos-para-downloads/ </dd>
+
+    
 </dl>
 
 
