@@ -51,62 +51,52 @@ Many software options are available for data analysis, but you might prefer R fo
 <table align="center">
     <tr>
         <td white-space: nowrap>Day 1, Monday, July 17</td>
-        <td>Get familiar with RStudio, read/write files, operations on data frames</td>
-        <td><a href="https://github.com/rsoren/r_training_beira2017/tree/master/day1">Summary</a></td>
+        <td>Running code in RStudio; R as a calculator; variables and vectors; using R functions</td>
         <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day1/day1_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 2, Tuesday, July 18</td>
-        <td>TBD</td>
-        <td>Summary</td>
-        <td>Code</td>
+        <td>Creating vectors; logical operators; indexing a vector; character strings; R's help documentation</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day2/day2_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 3, Wednesday, July 19</td>
         <td>TBD</td>
-        <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 4, Thursday, July 20</td>
         <td>TBD</td>
-        <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 5, Friday, July 21</td>
         <td>TBD</td>
-        <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 6, Monday, July 24</td>
         <td>TBD</td>
-        <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 7, Tuesday, July 25</td>
         <td>TBD</td>
-        <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 8, Wednesday, July 26</td>
         <td>TBD</td>
-        <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 9, Thursday, July 27</td>
         <td>TBD</td>
-        <td>Summary</td>
         <td>Code</td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 10, Friday, July 28</td>
         <td>TBD</td>
-        <td>Summary</td>
         <td>Code</td>
     </tr>
 </table>
