@@ -17,7 +17,7 @@ Beira, Mozambique - July 17 to July 28, 2017
 
 In this training, we will learn the basics of how to use R to explore, analyze and visualize your data. This website will be updated after each day of the course, including code examples and a summary of what we learned. 
 
-The purpose of the training is to give you practical skills. We will focus on common tasks and problems you encounter in your daily work. If you're currently working on a project and want one-on-one assistance, please feel free to contact me (see "About the instructor" below). Your analysis might be a good example to bring to the full group. 
+The purpose of the training is to give you practical skills. We will focus on common tasks and problems you encounter in your daily work. If you're currently working on a project and want one-on-one assistance, please feel free to contact me (see "About the instructor"). Your analysis might be a good example to bring to the full group. 
 
 Many software options are available for data analysis, but you might prefer R for a few reasons:
 - Unlike SAS, SPSS, Matlab, Stata, Minitab and others, R is completely free.
