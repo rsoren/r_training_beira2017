@@ -50,15 +50,13 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
 <table align="center">
     <tr>
         <td white-space: nowrap>Dia 1, 17 de julho</td>
-        <td>Familiarize-se com RStudio, arquivos de leitura / gravação, operações em "data frames" </td>
-        <td><a href="https://github.com/rsoren/r_training_beira2017/tree/master/day1">Resumo</a></td>
-        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day1/day1_script.R">Código</a></td>
+        <td>Executar código no rstudio; R como calculadora; variáveis e vetores; usando funções de R</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day1/day1_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 2, 18 de julho</td>
-        <td>TBD</td>
-        <td>Resumo</td>
-        <td>Código</td>
+        <td>Criando vetores; operadores lógicos; indexando um vetor; cordas de caracteres; documentação de ajuda de R</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day2/day2_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 3, 19 de julho</td>
