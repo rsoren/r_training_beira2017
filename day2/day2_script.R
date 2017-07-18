@@ -6,9 +6,10 @@
 # 
 # Overview
 #   - Review concepts from day 1
+#   - Demonstration of how to sign up for a Coursera course
 #   - Thinking of R objects as tabs in an Excel file
-#   - Make list of topics we want to cover in the course
 #   - Continue learning about types of R objects
+# 
 #   - HOMEWORK FOR TOMORROW:
 #        Install the dplyr package
 #        Run this command: install.packages("dplyr")
@@ -19,7 +20,6 @@
 # VARIABLES and VECTORS (continued from day 1)...
 #   generating numbers with seq, rep, :, sample, rnorm
 #   hist -- more about visualizing data later
-#     assign hist() output as object, and see what's inside
 
 seq(from = 1, to = 5) # get a sequence of numbers from 1 to 5
 1:5                   # same result
@@ -85,17 +85,28 @@ table(x6 >= 5)  # count how many elements of 'x6' are greater than
   
 #####
 # INDEXING with []
+# new function: %in% 
 
 x7 <- c("a", "b", "c", "d", "e")
 
 # -- indexing by position
-x7[2]       # get the value of the element in second position
-x7[2:4]     # get the value of the elements in positions 2, 3 and 4
-x7[-1]      # get the value of every element except the one in position 1
+x7[2]         # get the value of the element in second position
+x7[2:4]       # get the value of the elements in positions 2, 3 and 4
+x7[c(2,3,4)]  # this is the same thing as x7[2:4] 
 
 # -- indexing by vector of TRUE/FALSE
 x7[c(FALSE, TRUE, FALSE, TRUE, FALSE)]
 
+# check whether an element is in a vector with the %in% function
+3 %in% 1:8    # is 3 in the vector c(1,2,3,4,5,6,7,8) ?
+
+"b" %in% c("d", "e", "f")   # is "b" in the vector c("d", "e", f") ?
+
+
+x7 %in% c("d", "e")    # for each element of 'x7', 
+                       #   check whether it is "d" or "e"
+
+x7[x7 %in% c("d", "e")]  # display elements of x7 that are "d" or "e"
 
 
 # CHARACTER STRINGS
@@ -103,18 +114,20 @@ x7[c(FALSE, TRUE, FALSE, TRUE, FALSE)]
 #   'stringr' package: https://journal.r-project.org/archive/2010-2/RJournal_2010-2_Wickham.pdf
 #   str_c, str_sub, str_split_fixed
 #   is.character, as.character, is.numeric, as.numeric
-#   factor -- more on this later
 
-x8 <- "Bom dia!"     # create a character object that contains "Bom dia!"
+x9 <- "Bom dia!"     # create a character object that contains "Bom dia!"
 
-print(x8)    # display the word "Bom dia!"
-x8
+print(x9)    # display the word "Bom dia!"
+x9
 
 paste("Hello", "everybody!")  # combine the strings 
 paste0("Hello", "everybody!") # the paste0() function does not
                               # automatically include a space
 
-substr(x8, start = 1, stop = 3)
+substr(x9, start = 1, stop = 3) # extract the letters in positions 1 to 3
+
+is.character(x9)   # check whether 'x9' is a character vector
+is.numeric(x9)     # check whether 'x9' is a numeric vector
 
 
 #   -- Challenge:
@@ -128,7 +141,7 @@ substr(x8, start = 1, stop = 3)
 
 # GETTING HELP
 #   help, help.search, ?, ??, example, 
-#   Google.com, StackOverflow, r-project.org
+#   Google.com, rseek.org, StackOverflow
 #   Website for searching for a package: https://www.r-pkg.org/
 #   
 #   -- Challenge:
