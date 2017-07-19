@@ -6,30 +6,6 @@
 #
 
 
-# MATRICES
-# matrix, rbind, cbind, as.matrix
-# str
-# dim, ncol, nrow
-# indexing by position and name
-
-#   -- Challenge:
-#      1. Create a 3-by-4 matrix that only contains the number 5 (repeated 12 times)
-#      2. Create two vectors
-#           'tmp1' contains the letters "a", "b" and "c"
-#           'tmp2' contains the letters "d", "e" and "f"
-#      3. Use the rbind() function to combine tmp1 and tmp2
-#           to display a matrix that looks like this:
-#                                            "a"  "b"  "c"
-#                                            "d"  "e"  "f"
-#      4. Create an object called 'mat' that contains the matrix from #3
-#      5. Use cbind() to add another column to 'mat', with the letters "y" and "z"
-#         Your result should look like this:
-#                                            "a"  "b"  "c"  "y"
-#                                            "d"  "e"  "f"  "z"
-#
-
-
-
 
 # LISTS
 # list, as.list
