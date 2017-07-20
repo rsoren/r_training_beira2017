@@ -61,7 +61,7 @@ Many software options are available for data analysis, but you might prefer R fo
     </tr>
     <tr>
         <td white-space: nowrap>Day 3, Wednesday, July 19</td>
-        <td>Using Coursera.org; data analysis example; more indexing; character strings; matrizes</td>
+        <td>Using Coursera.org; data analysis example; character strings; indexing matrices</td>
         <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day3_script.R">Code</a></td>
     </tr>
     <tr>
