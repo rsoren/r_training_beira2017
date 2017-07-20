@@ -11,6 +11,8 @@ df <- data.frame(
 )
 
 x <- c(1,5,2,6,8,4,3)
+sort(x)
+order(x)
 sort(x) == x[order(x)]
 
 x2 <- rnorm(5)

@@ -54,8 +54,8 @@ df <- data.frame(
   var2 = 1:150 + rnorm(n = 150, mean = 0, sd = 15)
 )
 
-# write.csv(df, "example_data.csv")   # save the data as a CSV file
-# View(df)                            # look at the data
+# write.csv(df, "misc/example_data.csv")   # save the data as a CSV file
+# View(df)                                 # look at the data
 
 plot(
   x = df[, "var1"],  y = df[, "var2"], 
