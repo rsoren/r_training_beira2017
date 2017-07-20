@@ -11,6 +11,9 @@
 #   - Working with data frames
 #   - Saving and loading CSV files
 # 
+# If you haven't installed the dplyr package, please run this line of code:
+# install.packages("dplyr")
+
 
 #####
 # Review of concepts from days 1 through 3
@@ -85,7 +88,7 @@ my_matrix[c(2,3), 1:3]  # returns rows 2 and 3, and columns 1 through 3
 
 
 #####
-# Writing your own function
+# WRITING YOUR OWN FUNCTION
 
 sum(2, 3)  # there is already a function for adding two numbers
 
@@ -125,9 +128,85 @@ add_three_numbers(4, 5, 10)   # same thing, as long as we know the order
 #
 
 
+#####
+# DATA FRAMES (using base R functions)
+#
+# A type of R object for data organized like a spreadsheet
+#   - Rows and columns
+#   - Each row is a unique unit (person, facility, etc.)
+#   - Columns are variables with names, describing the unit
+#   - Each column has only 1 data type (numeric, character, logical, factor, etc.)
+#
+# dplyr is a package designed for handling data frames
+
+library(dplyr)
+
+df <- data.frame(
+  stringsAsFactors = FALSE, # so character strings don't become 'factor' variables
+  group = sample(c("a", "b", "c"), size = 50, replace = TRUE),
+  var1 = 1:50,
+  var2 = 1:50 + rnorm(n = 50, mean = 0, sd = 15)
+)
+
+# View(df)       # look at the data
+                 # note the capital V (V maiusculo)
+                 # The R language distinguishes between X and x
+           
+
+#-- indexing a data frame
+
+df[1:10, ]    # get the first 10 rows (same as matrix)
+df[1:10, c(2,3)]  # get the second and third columns
+
+# we can also use the variable names!
+names(df)
+df[1:20, c("var1", "var2")]  # get the variables named "var1" and "var2"
+
+mean(df$var2)    # IMPORTANT! Use the dollar sign $ to refer to a variable
+
+# Create a new variable, add 100 to the variable 'var2' within data frame 'df'
+df$var3 <- df$var2 + 100
+
+# Create a new variable given a certain condition
+#   If the group is "c", change it to "d", otherwise let it remain the same
+df$group2 <- ifelse(df$group == "c", "d", df$group)
+
+# Change an existing variable; change all values of 'var3' to 1
+df$var3 <- 1
+
+# -- Challenge
+#    1. Create a new variable 'var4' that is equal to 'var2'
+#    2. Look at the help documentation for "ifelse". What are the names of the 
+#       three parameters we need to give the ifelse() function?
+#    3. Create a new variable 'var5' that has the values:
+#         1 when var1 is less than 70, and
+#         0 when var1 is greater than or equal to 70
+#       HINT: Use the ifelse() function
+
+
+write.csv(df, "example_data.csv")
+# Where exactly did it save this file? It saved to your working directory
+getwd()   # Check what your working directory is
+          # When using an R project, the working directory is the project location
 
 
 
+# -- Challenge
+#    1. Use Excel to open the file you just created
+#    2. Within Excel, create a new variable called "newvar" and give it some data
+#    3. Exit Excel, and save your changes
+#    4. Read the file into R using this command, then type: View(df2)
+
+df2 <- read.csv("example_data.csv", as.is = FALSE)
+
+
+#-- dplyr functions for handling data
+# select()    keep certain columns
+# filter()    keep certain rows
+# mutate()    create or change variables
+# arrange()   sort the entire data frame according to the order of variable(s)
+# group_by()  define groups, so we can apply a function within each group
+# summarize() get information about each group
 
 
 
