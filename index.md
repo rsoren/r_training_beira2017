@@ -52,22 +52,22 @@ Many software options are available for data analysis, but you might prefer R fo
     <tr>
         <td white-space: nowrap>Day 1, Monday, July 17</td>
         <td>Running code in RStudio; R as a calculator; variables and vectors; using R functions</td>
-        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day1/day1_script.R">Code</a></td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day1_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 2, Tuesday, July 18</td>
         <td>Creating vectors; logical operators; indexing a vector</td>
-        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day2/day2_script.R">Code</a></td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day2_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 3, Wednesday, July 19</td>
-        <td>Using Coursera.org; data analysis example; more indexing; character strings; matrices</td>
-        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day3/day3_script.R">Code</a></td>
+        <td>Using Coursera.org; data analysis example; character strings; indexing matrices</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day3_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 4, Thursday, July 20</td>
-        <td>TBD</td>
-        <td>Code</td>
+        <td>R documentation and online help; writing your own functions; data frames; saving and loading CSV files</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day4_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 5, Friday, July 21</td>

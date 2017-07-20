@@ -51,22 +51,22 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
     <tr>
         <td white-space: nowrap>Dia 1, 17 de julho</td>
         <td>Executar código no RStudio; R como calculadora; variáveis e vetores; usando funções de R</td>
-        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day1/day1_script.R">Código</a></td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day1_script.R">Código</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 2, 18 de julho</td>
         <td>Criando vetores; operadores lógicos; indexando um vetor; cordas de caracteres; documentação de ajuda de R</td>
-        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day2/day2_script.R">Código</a></td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day2_script.R">Código</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 3, 19 de julho</td>
-        <td>Usando Coursera.org; exemplo de análise de dados; mais indexação; cordas de caracteres; matrizes</td>
-        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day3/day3_script.R">Código</a></td>
+        <td>Usando Coursera.org; exemplo de análise de dados; cordas de caracteres; indexando matrices</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day3_script.R">Código</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 4, 20 de julho</td>
-        <td>TBD</td>
-        <td>Código</td>
+        <td>R documentação e ajuda on-line; escreve suas próprias funções; "data frames"; salvando e carregando arquivos</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day4_script.R">Código</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 5, 21 de julho</td>
