@@ -37,7 +37,7 @@ sample(1:5, size = 20, replace = TRUE)
 
 # generate random numbers that follow a Normal distribution,
 #   and put them into the object 'x4'
-x4 <- rnorm(n = 50, mean = 10, sd = 2)
+x4 <- rnorm(n = 5000, mean = 10, sd = 2)
 hist(x4)       # view a histogram of the random numbers
 dev.off()      # stop displaying the graph
 
@@ -92,6 +92,7 @@ table(x6 <= 2)
 # INDEXING with []
 
 x7 <- c("a", "b", "c", "d", "e")
+
 
 # -- indexing by position
 x7[2]         # get the value of the element in second position
