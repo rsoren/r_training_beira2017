@@ -33,7 +33,7 @@ sample(x = x3, size = 20, replace = TRUE) # random sample of 20 numbers from x3
 
 # -- Challenge:
 #    1. Using the sample() function,
-#       get 150 random numbers that are higher than 10 and lower than 17
+#       get 150 random numbers that are greater than 10 and lower than 17
 
 #-- Join character strings together with the paste() function
 paste("Here", "are", "some", "words")
@@ -56,8 +56,8 @@ x3[x3 >= 4]  # returns elements of x3 that are greater than or equal to 4
 
 
 # we also use brackets [] to ask for elements of a matrix
-# BEFORE the comma refers to ROWS
-# AFTER the comma refers to COLUMNS
+# -- BEFORE the comma refers to ROWS
+# -- AFTER the comma refers to COLUMNS
 
 my_matrix <- matrix(1:20, nrow = 4, ncol = 5)
 print(my_matrix)
@@ -89,32 +89,42 @@ my_matrix[c(2,3), 1:3]  # returns rows 2 and 3, and columns 1 through 3
 
 sum(2, 3)  # there is already a function for adding two numbers
 
-# let's make our own function that does the same thing
-
+# Make a function that adds two numbers together
 add_two_numbers <- function(x1, x2) {
-  x1 + x2
+  result <- x1 + x2
+  return(result)
 }
 
 add_two_numbers(x1 = 4, x2 = 5)
 add_two_numbers(10, 1)  # if we know the order, we can just give the input values
 str(add_two_numbers)    # to find out what parameters it expects, we use str()
 
-# we can set a default value, which can be changed optionally
+# We can set a default value for a parameter
+# make a funtion that adds three numbers together, where
+#   the third number is 20 by default (but can be changed optionally)
 add_three_numbers <- function(x1, x2, x3 = 20) {
-  x1 + x2 + x3
+  result <- x1 + x2 + x3
+  return(result)
 }
 
 add_three_numbers(4, 5)
 add_three_numbers(x1 = 4, x2 = 5, x3 = 10)
 add_three_numbers(4, 5, 10)   # same thing, as long as we know the order
 
-plot(1:5, 6:10, pch = 20, col = "black")
 
-color_plot <- function(color_var, size) {
-  plot(1:5, 6:10, pch = 20, col = color_var, cex = size)
-}
+# -- Challenge:
+#
+#    1. Make a function that multiplies a number by 2
+#       HINT: We use the * symbol for multiplication
+# 
+#    2. Make a function that always says, "Voce escreveu: ",
+#       followed by a character string that the user chooses
+#
+#       HINT: Use the paste() function inside your function, for example: 
+#             paste("Pasting", "combines words")
+#
 
-color_plot("red", 0.5)
+
 
 
 
