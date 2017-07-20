@@ -56,13 +56,13 @@ Many software options are available for data analysis, but you might prefer R fo
     </tr>
     <tr>
         <td white-space: nowrap>Day 2, Tuesday, July 18</td>
-        <td>Creating vectors; logical operators; indexing a vector; character strings; R's help documentation</td>
+        <td>Creating vectors; logical operators; indexing a vector</td>
         <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day2/day2_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 3, Wednesday, July 19</td>
-        <td>TBD</td>
-        <td>Code</td>
+        <td>Using Coursera.org; data analysis example; more indexing; character strings; matrices</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day3/day3_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 4, Thursday, July 20</td>

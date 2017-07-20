@@ -50,7 +50,7 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
 <table align="center">
     <tr>
         <td white-space: nowrap>Dia 1, 17 de julho</td>
-        <td>Executar código no rstudio; R como calculadora; variáveis e vetores; usando funções de R</td>
+        <td>Executar código no RStudio; R como calculadora; variáveis e vetores; usando funções de R</td>
         <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day1/day1_script.R">Código</a></td>
     </tr>
     <tr>
@@ -60,8 +60,8 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
     </tr>
     <tr>
         <td white-space: nowrap>Dia 3, 19 de julho</td>
-        <td>TBD</td>
-        <td>Código</td>
+        <td>Usando Coursera.org; exemplo de análise de dados; mais indexação; cordas de caracteres; matrizes</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/day3/day3_script.R">Código</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 4, 20 de julho</td>
