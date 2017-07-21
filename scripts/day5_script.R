@@ -44,7 +44,8 @@ dat1 <- data.frame(
   dif_vestir = sample(respostas, size = num_rows, prob = c(0.4, 0.3, 0.2, 0.1), replace = TRUE ),
   dif_andar = sample(respostas, size = num_rows, prob = c(0.4, 0.3, 0.2, 0.1), replace = TRUE )
 )
-    
+
+
 #####
 # Foreshadowing... get counts and percentages with dplyr
 dat7 <- dat1 %>%
@@ -68,8 +69,8 @@ dat2 <- read.csv("tmps_example_data.csv")
 # SUMMARY STATISTICS
 
 # Get counts and percentages from categorical variable
-table(dat2$dif_vestir)               # counts
-table(dat2$dif_vestir) / nrow(dat2)  # percentages
+table(dat2$dif_vestir)                       # counts
+(table(dat2$dif_vestir) / nrow(dat2)) * 100  # percentages
 
 # Challenge
 # 1. Get counts and percentages for the "dif_andar" variable
@@ -83,6 +84,7 @@ hist(dat2$anos, breaks = 30, main = "Distribution of age", xlab = "Age")
 # Get summary statistics about "anos"
 summary(dat2$anos)  # several statistics
 mean(dat2$anos)     # mean (average)
+median(dat2$anos)   # median (50th percentile)
 sd(dat2$anos)       # standard deviation
 
 
@@ -90,8 +92,8 @@ sd(dat2$anos)       # standard deviation
 # CHANGING THE DATA FRAME
 
 #-- create new variable, or change existing variable
-dat2$meses <- dat2$anos / 12
-dat2$sexo2 <- ifelse(dat2$sexo == "MASCULINO", 1, 0)
+dat2$meses <- dat2$anos * 12
+dat2$sexo2 <- ifelse(dat2$sexo == "MASCULINO", yes = 1, no = 0)
 
 # Challenge
 # -- Check how the 'sexo2' is different than 'sexo'
@@ -114,17 +116,19 @@ library(dplyr)
 
 # this code does the same as above, but is more clear
 dat5 <- dat2 %>%
-  mutate(meses = anos / 12) %>%
+  mutate(meses = anos * 12) %>%
   mutate(sexo2 = ifelse(sexo == "MASCULINO", 1, 0)) %>%
   filter(anos < 20) %>%
   select(provincia, dif_vestir, dif_andar)
+
+
 
 # Challenge
 # -- Create a new data frame called 'my_dat' that takes 'dat5' and keeps
 #    only the rows where the 'provincia' variable is "MANICA"
 #    HINT: Your answer should use the filter() function and == symbol
 
-# arrange rows so 'anos' is increasing
+# How to arrange rows so 'anos' is increasing
 dat6 <- arrange(dat2, anos)
 
 
