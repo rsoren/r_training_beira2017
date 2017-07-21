@@ -32,11 +32,16 @@ print(x3)
 
 sample(x = x3, size = 20, replace = TRUE) # random sample of 20 numbers from x3
 # How did we know to use the parameters "x", "size" and "replace"?
-#   Use help("sample") or str(sample)
+#   Use help("sample")
+#   Look at "Usage" and "Arguments" to see what parameters it expects
+#   Also look at "Examples" at the bottom
+
 
 # -- Challenge:
 #    1. Using the sample() function,
 #       get 150 random numbers that are greater than 10 and lower than 17
+sample(x = 11:16, size = 150, replace = TRUE)
+
 
 #-- Join character strings together with the paste() function
 paste("Here", "are", "some", "words")
@@ -44,6 +49,7 @@ paste0("Here", "are", "some", "words") # useful for writing file paths (more lat
 
 
 # when you give paste() a vector, it operates on each element separately
+x2 <- c("This", "is", "a", "character", "vector")
 x2                 # x2 is a character vector we created earlier
 paste0(x2, "xyz")  # adds "xyz" to each element of the vector
 
@@ -51,11 +57,13 @@ x3 + 10    # when we do math with vectors, the calculation happens for each elem
 
 
 # we use square brackets [] to ask for specific elements of a vector
+x3 <- 3:6
 x3[3]        # returns the third element of x3
 x3[x3 >= 4]  # returns elements of x3 that are greater than or equal to 4
 
 # -- Challenge:
-#    Using indexing, get the elements of x3 that are less than 2
+#    Using indexing, get the elements of x3 that are less than 5
+x3[x3 < 5]
 
 
 # we also use brackets [] to ask for elements of a matrix
@@ -71,6 +79,9 @@ my_matrix[c(2,3), 1:3]  # returns rows 2 and 3, and columns 1 through 3
 #       that looks like this:
 #                       6   10   14
 #                       7   11   15
+my_matrix   # look at the matrix; we want rows 2 and 3, and columns 2 through 4
+my_matrix[c(2,3), c(2,3,4)]
+my_matrix[2:3, 2:4]  # same thing
 
 
 #####
@@ -82,50 +93,68 @@ my_matrix[c(2,3), 1:3]  # returns rows 2 and 3, and columns 1 through 3
 #   -- Challenge:
 #      1. Use Google to find an R function that splits 1 string into multiple strings
 #      2. Use the help() function to figure out how to use this function
+help(strsplit)
 #      3. Create an object called my_string that contains "Here is some text"
+my_string <- "Here is some text"
 #      4. Use the function from #1 and #2 to split my_string into 4 words
+strsplit(my_string, split = " ")
 
 
 
 #####
 # WRITING YOUR OWN FUNCTION
 
-sum(2, 3)  # there is already a function for adding two numbers
+sum(2, 3)  # R already has a function for adding two numbers
 
-# Make a function that adds two numbers together
+# Make a new function that adds two numbers together
 add_two_numbers <- function(x1, x2) {
   result <- x1 + x2
   return(result)
 }
 
 add_two_numbers(x1 = 4, x2 = 5)
-add_two_numbers(10, 1)  # if we know the order, we can just give the input values
-str(add_two_numbers)    # to find out what parameters it expects, we use str()
+add_two_numbers(10, 1)  # if we know the order of parameters (e.g. x1, then x2), 
+                        #   we can just give the input values
+
 
 # We can set a default value for a parameter
-# make a funtion that adds three numbers together, where
+# Make a funtion that adds three numbers together, where
 #   the third number is 20 by default (but can be changed optionally)
+
 add_three_numbers <- function(x1, x2, x3 = 20) {
   result <- x1 + x2 + x3
   return(result)
 }
 
-add_three_numbers(4, 5)
 add_three_numbers(x1 = 4, x2 = 5, x3 = 10)
-add_three_numbers(4, 5, 10)   # same thing, as long as we know the order
+add_three_numbers(x1 = 4, x2 = 5)  # assumes that x3 is 20
 
 
 # -- Challenge:
 #
 #    1. Make a function that multiplies a number by 2
 #       HINT: We use the * symbol for multiplication
-# 
+
+multiply_2_nums <- function(x1, x2) {
+  res <- x1 * x2
+  return(res)
+}
+multiply_2_nums(10, 5)
+
+
 #    2. Make a function that always says, "Voce escreveu: ",
 #       followed by a character string that the user chooses
 #
 #       HINT: Use the paste() function inside your function, for example: 
 #             paste("Pasting", "combines words")
-#
+
+write_something <- function(string_var) {
+  res <- paste0("Voce escreveu: ", string_var)
+  return(res)
+}
+
+write_something("some text")
+write_something(string_var = "some text") # same thing
 
 
 #####
@@ -141,6 +170,7 @@ add_three_numbers(4, 5, 10)   # same thing, as long as we know the order
 
 library(dplyr)
 
+# create some data
 df <- data.frame(
   stringsAsFactors = FALSE, # so character strings don't become 'factor' variables
   group = sample(c("a", "b", "c"), size = 50, replace = TRUE),
@@ -153,14 +183,14 @@ df <- data.frame(
                  # The R language distinguishes between X and x
            
 
-#-- indexing a data frame
+#-- indexing a data frame (same as with a matrix)
 
 df[1:10, ]    # get the first 10 rows (same as matrix)
 df[1:10, c(2,3)]  # get the second and third columns
 
 # we can also use the variable names!
 names(df)
-df[1:20, c("var1", "var2")]  # get the variables named "var1" and "var2"
+df[1:5, "var2"]  # get rows 1 through 5, and the variable named "var2"
 
 mean(df$var2)    # IMPORTANT! Use the dollar sign $ to refer to a variable
 
@@ -169,19 +199,26 @@ df$var3 <- df$var2 + 100
 
 # Create a new variable given a certain condition
 #   If the group is "c", change it to "d", otherwise let it remain the same
-df$group2 <- ifelse(df$group == "c", "d", df$group)
+df$group2 <- ifelse(test = df$group == "c", yes = "d", no = df$group)
 
 # Change an existing variable; change all values of 'var3' to 1
 df$var3 <- 1
 
 # -- Challenge
 #    1. Create a new variable 'var4' that is equal to 'var2'
+df$var4 <- df$var2
+
 #    2. Look at the help documentation for "ifelse". What are the names of the 
 #       three parameters we need to give the ifelse() function?
+help("ifelse")  # test     check if an expression is true
+                # yes      if the expression is true, what value is returned
+                # no       if the expression is false, what value is returned
+
 #    3. Create a new variable 'var5' that has the values:
 #         1 when var1 is less than 70, and
 #         0 when var1 is greater than or equal to 70
 #       HINT: Use the ifelse() function
+df$var5 <- ifelse(df$var1 < 70, 1, 0)
 
 
 write.csv(df, "example_data.csv")
@@ -197,6 +234,7 @@ getwd()   # Check what your working directory is
 #    3. Exit Excel, and save your changes
 #    4. Read the file into R using this command, then type: View(df2)
 
+# read the CSV file back into R
 df2 <- read.csv("example_data.csv", as.is = FALSE)
 
 
@@ -207,7 +245,5 @@ df2 <- read.csv("example_data.csv", as.is = FALSE)
 # arrange()   sort the entire data frame according to the order of variable(s)
 # group_by()  define groups, so we can apply a function within each group
 # summarize() get information about each group
-
-
 
 
