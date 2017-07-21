@@ -66,13 +66,13 @@ Many software options are available for data analysis, but you might prefer R fo
     </tr>
     <tr>
         <td white-space: nowrap>Day 4, Thursday, July 20</td>
-        <td>R documentation and online help; writing your own functions; data frames; saving and loading CSV files</td>
+        <td>R documentation and online help; writing your own functions; introduction to data frames</td>
         <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day4_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 5, Friday, July 21</td>
-        <td>TBD</td>
-        <td>Code</td>
+        <td>Handling data frames; summary statistics; some graphics; saving and loading files</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day5_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 6, Monday, July 24</td>
