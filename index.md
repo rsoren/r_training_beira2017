@@ -66,7 +66,7 @@ Many software options are available for data analysis, but you might prefer R fo
     </tr>
     <tr>
         <td white-space: nowrap>Day 4, Thursday, July 20</td>
-        <td>R documentation and online help; writing your own functions; introduction to data frames</td>
+        <td>R documentation and online help; writing your own functions; intro to data frames</td>
         <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day4_script.R">Code</a></td>
     </tr>
     <tr>
