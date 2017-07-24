@@ -172,13 +172,21 @@ abline(fit1)
 
 dat2 <- dat1 %>%
   group_by(Gender) %>%
-  summarize(avg_height = mean(Height))
+  dplyr::summarize(avg_height = mean(Height))
 
 barplot(
   height = dat2$avg_height, 
   names.arg = c("Females", "Males"), 
   main = "Average height by gender"
 )
+
+pie(
+  x = dat2$avg_height, 
+  labels = c("Females", "Males"),
+  col = c("cornflowerblue", "orange"),
+  main = "Average height by gender"
+)
+
 
 
 
