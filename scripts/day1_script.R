@@ -41,6 +41,10 @@
 sqrt(16)    # square root
 4^2         # exponentiation (example is "4 squared")
 
+sqrt(16)
+2+ 3 + 4
+sum(2, 3, 4)
+
 #   -- Challenge: Use R to calculate these expressions
 # 
 #      2 + 2

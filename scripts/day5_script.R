@@ -10,6 +10,7 @@
 #      write.csv()      Save a data frame as a CSV file
 #      read.csv()       Bring data from a CSV file into R
 #
+#
 #      table()          Get counts of a variable
 #      nrow()           Get the number of rows in the data frame
 #      subset()         Select certain rows or columns from the data frame
@@ -59,11 +60,12 @@ dat7 <- dat1 %>%
 
 # Save data frame as CSV
 write.csv(dat1, "tmps_example_data.csv")
+getwd()
 
 # Use data from CSV on your computer
 # -- R can read file types from Stata, SAS, Excel and many others
 dat2 <- read.csv("tmps_example_data.csv")
-  
+
 
 #####
 # SUMMARY STATISTICS
@@ -72,14 +74,25 @@ dat2 <- read.csv("tmps_example_data.csv")
 table(dat2$dif_vestir)                       # counts
 (table(dat2$dif_vestir) / nrow(dat2)) * 100  # percentages
 
+
 # Challenge
 # 1. Get counts and percentages for the "dif_andar" variable
-# 2. Count how many people are in each province
+table(dat2$dif_andar)
+table(dat2$dif_andar) / nrow(dat2) * 100
 
+# 2. Count how many people are in each province
+table(dat2$provincia)
 
 # Graph the distribution of the "anos" variable
 hist(dat2$anos)
-hist(dat2$anos, breaks = 30, main = "Distribution of age", xlab = "Age")
+hist(
+  dat2$anos, 
+  breaks = 30, 
+  main = "Distribution of age", 
+  xlab = "Age",
+  ylab = "Some random label",
+  col = "red"
+)
 
 # Get summary statistics about "anos"
 summary(dat2$anos)  # several statistics
@@ -93,16 +106,31 @@ sd(dat2$anos)       # standard deviation
 
 #-- create new variable, or change existing variable
 dat2$meses <- dat2$anos * 12
-dat2$sexo2 <- ifelse(dat2$sexo == "MASCULINO", yes = 1, no = 0)
+
+dat2$sexo <- as.character(dat2$sexo)
+dat2[3, "sexo"] <- "transgender"
+
+dat2$sexo2 <- NA
+dat2$sexo2 <- ifelse(dat2$sexo == "MASCULINO", yes = 1, no = dat2$sexo2)
+dat2$sexo2 <- ifelse(dat2$sexo == "FEMININO", yes = 2, no = dat2$sexo2)
+dat2$sexo2 <- ifelse(dat2$sexo == "transgender", yes = 3, no = dat2$sexo2)
+
 
 # Challenge
 # -- Check how the 'sexo2' is different than 'sexo'
 
 # Keep only rows of people with age less than 20
 dat3 <- subset(dat2, anos < 20)
+nrow(dat3)
+nrow(dat2)
 
 # Keep only the columns 'provincia', 'dif_vestir', 'dif_andar'
 dat4 <- subset(dat2, select = c("provincia", "dif_vestir", "dif_andar"))
+
+
+dat5 <- subset(dat2, provincia == "SOFALA" & sexo == "FEMININO")
+dat6 <- subset(dat2, select = c(dif_andar, meses, sexo2))
+
 
 
 #####
@@ -121,12 +149,16 @@ dat5 <- dat2 %>%
   filter(anos < 20) %>%
   select(provincia, dif_vestir, dif_andar)
 
-
-
 # Challenge
 # -- Create a new data frame called 'my_dat' that takes 'dat5' and keeps
 #    only the rows where the 'provincia' variable is "MANICA"
 #    HINT: Your answer should use the filter() function and == symbol
+
+my_dat <- dat5 %>%
+  filter(provincia == "MANICA")
+
+install.packages("dplyr")
+library(dplyr)
 
 # How to arrange rows so 'anos' is increasing
 dat6 <- arrange(dat2, anos)
