@@ -70,8 +70,8 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
     </tr>
     <tr>
         <td white-space: nowrap>Dia 5, 21 de julho</td>
-        <td>TBD</td>
-        <td>Código</td>
+        <td>Manipulação de "data frames"; estatísticas de resumo; alguns gráficos; salvando e carregando arquivos</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day5_script.R">Código</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 6, 24 de julho</td>
