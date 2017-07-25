@@ -18,6 +18,7 @@
 #   -- Examples of linear and logistic regression
 #   -- Don't worry about the code for now, just interpretation
 
+dat1 <- read.csv("http://www.math.uah.edu/stat/data/Galton.csv", as.is = TRUE)
 
 #-- linear regression
 fit2 <- lm(Height ~ Gender + Father, data = dat1)
