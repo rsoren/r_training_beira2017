@@ -4,7 +4,7 @@
 # Reed Sorensen
 # July 2017
 #
-# 1. Brief introduction to regression
+# 1. Introduction to regression
 # 2. Visualizing data with graphics
 # 3. Demonstrate reading files from other programs
 # 4. Review of 'dplyr' commands for getting Table 1 of a scientific paper
@@ -12,7 +12,7 @@
 
 
 ######
-# BRIEF INTRODUCTION TO REGRESSION 
+# INTRODUCTION TO REGRESSION 
 #      including showing results with graphs
 #
 #   -- Examples of linear and logistic regression
