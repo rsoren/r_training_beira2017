@@ -81,7 +81,7 @@ Many software options are available for data analysis, but you might prefer R fo
     </tr>
     <tr>
         <td white-space: nowrap>Day 7, Tuesday, July 25</td>
-        <td>Intro to regression; describing data with graphics; reading files from other programs</td>
+        <td>Intro to regression; describing data with graphics; using data from other programs</td>
         <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day7_script.R">Code</a></td>
     </tr>
     <tr>
