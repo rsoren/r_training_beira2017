@@ -76,8 +76,8 @@ Many software options are available for data analysis, but you might prefer R fo
     </tr>
     <tr>
         <td white-space: nowrap>Day 6, Monday, July 24</td>
-        <td>TBD</td>
-        <td>Code</td>
+        <td>'dplyr' functions for handling data frames; reading files from other programs; graphics</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day6_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 7, Tuesday, July 25</td>

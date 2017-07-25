@@ -75,8 +75,8 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
     </tr>
     <tr>
         <td white-space: nowrap>Dia 6, 24 de julho</td>
-        <td>TBD</td>
-        <td>Código</td>
+        <td>Funções de "dplyr" para manipulação de 'data frames'; cargar arquivos de outros programas; gráficos</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day6_script.R">Código</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 7, 25 de julho</td>
