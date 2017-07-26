@@ -24,6 +24,7 @@ dat1 <- read.csv("http://www.math.uah.edu/stat/data/Galton.csv", as.is = TRUE)
 fit2 <- lm(Height ~ Gender + Father, data = dat1)
 summary(fit2)
 
+
 dat_predictions <- expand.grid(
   Gender = c("F", "M"),
   Father = c(60:75)
@@ -42,9 +43,10 @@ with(subset(dat_predictions, Gender == "F"), lines(Father, pred))
 with(subset(dat_predictions, Gender == "M"), lines(Father, pred, lty = 2))
 legend("topleft", lty = c(2,1), legend = c("Males", "Females"), cex = 0.9)
 
+library(dplyr)
 
 #-- logistic regression
-X <- 67
+X <- 65
 
 dat3 <- dat1 %>%
   mutate(height2 = ifelse(Height > X, 1, 0))
@@ -77,9 +79,14 @@ dat1 <- read.csv("http://www.math.uah.edu/stat/data/Galton.csv", as.is = TRUE)
 # CHALLENGE
 # -- Explore this new data set:
 #    1. What are the variables names? Use names()
+names(dat1)
+
 #    2. Is each variable numeric, character, or another type? Use str()
+str(dat1)
+
 #    3. Use the summary() function to get 
 #       summary statistics about the 'Height' variable
+summary(dat1$Height)
 
 
 
@@ -94,6 +101,8 @@ hist(dat1$Height, breaks = 30, xlab = "Child's height", main = "")
 # Use hist() to show the distribution of the 'Father' variable
 # -- Change the x-axis label to be "Altura do pai"
 # 
+
+hist(dat1$Father, xlab = "Altura do pai")
 
 
 #-- TWO CONTINUOUS VARIABLES: scatterplot
@@ -113,9 +122,10 @@ abline(fit1)
 
 
 # CHALLENGE:
-# Use plot() to visualize at the association 
+# Use plot() to visualize the association 
 #   between the height of fathers and mothers
 
+plot(x = dat1$Father, y = dat1$Mother)
 
 
 #-- ONE CATEGORICAL and ONE CONTINUOUS VARIABLE: barplot
@@ -123,11 +133,11 @@ abline(fit1)
 
 dat2 <- dat1 %>%
   group_by(Gender) %>%
-  dplyr::summarize(avg_height = mean(Height))
+  summarize(avg_height = mean(Height))
 
 barplot(
-  height = dat2$avg_height, 
-  names.arg = c("Females", "Males"), 
+  height = dat2$avg_height,
+  names.arg = c("Females", "Males"),
   main = "Average height by gender"
 )
 
@@ -137,83 +147,6 @@ pie(
   col = c("cornflowerblue", "red"),
   main = "Average height by gender"
 )
-
-
-
-#####
-# DEMONSTRATE READING FILES FROM:
-#   CSV, Stata, SPSS, SAS, Access, etc.
-#   
-#   'foreign' is the standard package
-#   'haven' can read Stata 13 and .sas7bdat (SAS) files
-#   'RODBC' can connect to databases, for example, Microsoft Access 
-#   
-
-
-# CHALLENGE
-#
-# 1. Go to Google and find the reference manual for the 'haven' package
-#    What functions would you use to read these files into R?
-#    
-#    a. SPSS dataset
-#    b. Stata dataset
-#    c. SAS dataset
-# 
-# 2. Go to Google and find the reference manual for the 'foreign' package
-#
-#    a. How many file types we can into R with this package?
-#    b. Do you have data on your computer in any of these formats?
-#
-
-
-library(foreign)
-library(dplyr)
-
-
-# CHALLENGE
-# 1. After running 'library(foreign)' type this into the console...
-#
-#    foreign::
-#
-#   Then hit tab
-#   You can look at all of the functions in the package
-#
-# 2. Do the same with the 'dplyr' package
-#    'dplyr' can do a lot more!
-#
-
-
-
-
-#####
-# REVIEW
-# Use 'dplyr' functions to calculate results for Table 1 of a scientific paper
-# Table 1 describes the characteristics of our sample
-# 
-
-str(dat1)  # look at the structure of 'dat1'
-
-# get the count and percent for categorical variables
-dat_gender <- dat1 %>%
-  group_by(Gender) %>%
-  summarize(count = n()) %>%
-  mutate(pct = count / sum(count) )
-
-# get the mean and standard deviation for continuous variables
-dat_continuous <- dat1 %>%
-  summarize(
-    child_mean = mean(Height),
-    child_sd = sd(Height),
-    father_mean = mean(Father),
-    father_sd = sd(Father),
-    mother_mean = mean(Mother),
-    mother_sd = sd(Mother) )
-
-# How to handle the 'Kids' variable (number of kids in the family)?
-# Let's type it out together
-#   1. Treat it as a categorical variable --> too many levels
-#   2. Create a new variable that cuts 'Kids' into groups
-#
 
 
 
