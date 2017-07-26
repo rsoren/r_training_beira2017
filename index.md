@@ -81,13 +81,13 @@ Many software options are available for data analysis, but you might prefer R fo
     </tr>
     <tr>
         <td white-space: nowrap>Day 7, Tuesday, July 25</td>
-        <td>Intro to regression; describing data with graphics; using data from other programs</td>
+        <td>Intro to regression; describing data with graphics</td>
         <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day7_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 8, Wednesday, July 26</td>
-        <td>TBD</td>
-        <td>Code</td>
+        <td>Finding and using R packages; loading data from other programs; graphing regression results</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day8_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 9, Thursday, July 27</td>
