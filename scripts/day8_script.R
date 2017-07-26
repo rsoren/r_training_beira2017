@@ -7,6 +7,10 @@
 # Overview
 #
 # 1. Demonstrate reading files from other programs
+# 2. Using 'dplyr' to get results for Table 1 of a scientific paper
+# 3. Getting predictions with regression
+# 4. Graphing regression results
+#
 
 
 #####
