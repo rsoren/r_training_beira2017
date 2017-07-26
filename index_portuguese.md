@@ -85,8 +85,8 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
     </tr>
     <tr>
         <td white-space: nowrap>Dia 8, 26 de julho</td>
-        <td>TBD</td>
-        <td>Código</td>
+        <td>Encontrar e usar pacotes R; carregando dados de outros programas; gráficos para resultados de regressão</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day7_script.R">Código</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 9, 27 de julho</td>
