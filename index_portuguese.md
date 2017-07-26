@@ -80,13 +80,13 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
     </tr>
     <tr>
         <td white-space: nowrap>Dia 7, 25 de julho</td>
-        <td>Introdução à regressão; gráficos para diferentes tipos de variáveis; cargando arquivos de outros programas</td>
+        <td>Introdução à regressão; gráficos para diferentes tipos de variáveis</td>
         <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day7_script.R">Código</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 8, 26 de julho</td>
         <td>Encontrar e usar pacotes R; carregando dados de outros programas; gráficos para resultados de regressão</td>
-        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day7_script.R">Código</a></td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day8_script.R">Código</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 9, 27 de julho</td>
