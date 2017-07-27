@@ -92,7 +92,7 @@ Many software options are available for data analysis, but you might prefer R fo
     <tr>
         <td white-space: nowrap>Day 9, Thursday, July 27</td>
         <td>TBD</td>
-        <td>Code</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day9_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 10, Friday, July 28</td>
