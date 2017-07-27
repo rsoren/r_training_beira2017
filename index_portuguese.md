@@ -91,7 +91,7 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
     <tr>
         <td white-space: nowrap>Dia 9, 27 de julho</td>
         <td>TBD</td>
-        <td>Código</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day9_script.R">Código</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 10, 28 de julho</td>
