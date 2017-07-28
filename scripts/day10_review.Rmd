@@ -1,0 +1,622 @@
+---
+title: "'Data Analysis With R'"
+author: "Reed Sorensen"
+output: html_document
+---
+
+&nbsp;
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Introduction
+
+This review covers key concepts from the course "R for Data Analysis", held in Beira, Mozambique during July 17 to July 28, 2017. See [here](https://github.com/rsoren/r_training_beira2017/blob/master/index.md) for the course syllabus, also available [in Portuguese](https://github.com/rsoren/r_training_beira2017/blob/master/index_portuguese.md). The syllabus includes [instructions](https://github.com/rsoren/r_training_beira2017/blob/master/index.md#setup) for setting up R and RStudio on your computer, [links to code](https://github.com/rsoren/r_training_beira2017/blob/master/index.md#materials) for each day of the course, and [recommended resources](https://github.com/rsoren/r_training_beira2017/blob/master/index.md#resources) for learning more about R. 
+
+
+### Getting started 
+
+After installing R and RStudio, open RStudio to begin running code. Go to 'File' --> 'New File' --> 'R Script'. Scripts are a way to save your code as a text file, which enables you to re-run your analysis at the click of a button. Go to 'File' --> 'Save As...' to save your script for later use. 
+
+There are two ways to run code in RStudio. 
+
+- Click on the 'Console' window and type:
+
+```{r}
+print("Hello, world")
+```
+
+This runs the code interactively, and you can see the result in the Console window.
+
+- Alternatively, write code in the editor (your script window), select the code you want to run, then click the 'Run' button. If you want to run one line of code, it is sufficient to place your cursor on the line, then click 'Run'. 
+
+
+### Using R packages
+
+The R language by itself (also known as "base R") is capable of doing most statistical and data management tasks. Additional functionality is available through R packages. In this review, we will use the packages "dplyr", "gmodels" and "foreign". If you haven't installed the packages already, you can do so with:
+
+```{r eval=FALSE}
+install.packages("dplyr")
+install.packages("gmodels")
+install.packages("foreign")
+```
+
+The `install.packages()` function saves the package on your computer for future use. When you want to use a package, use the `library()` function like this:
+
+```{r message=FALSE, warning=FALSE}
+library("dplyr")
+```
+
+After running `library()`, the functions from within the package you loaded (e.g. `dplyr`) are now available in your R session. Every official R package have a reference manual available online, including a list of all functions and how to use them. Also, don't forget about simply entering questions into Google. The R user community is large and active, so your question has probably been asked and answered before. 
+
+### R as a calculator
+
+You can think of R as a very powerful calculator. It can do all of the basic mathematical operations:
+
+```{r}
+2 + 2
+10 / 5
+5^2
+sqrt(25)
+```
+
+
+### Functions
+
+Notice that we used the function ```sqrt()``` to calculate the square root of 25. R has many functions that allow for more complicated mathematical operations.
+```{r}
+log(5)
+
+```
+And they can be nested within each other:
+```{r}
+exp(log(5))
+```
+
+We can also create our own functions:
+```{r}
+
+add_two_numbers <- function(num1, num2) {
+  return(num1 + num2)
+}
+
+add_two_numbers(20, 25)
+
+```
+
+
+### Variables
+
+A variable is an "object" that contains whatever information you put inside it. For example, this command puts the number 2 inside a variable called `x`:
+
+```{r}
+x <- 2
+```
+
+Now, when we use `x`, R gives us whatever is inside of the object called `x`:
+
+```{r}
+x + 10
+```
+
+We can put anything into a variable, and we can name the variable whatever we want. For example, here, we put the result of a mathematical operation inside of an object called `my_result`, then we ask to see the information by simply typing `my_result`:
+
+```{r}
+my_result <- 5 + 12*1.2 + 6*2.4
+my_result
+
+```
+
+NOTE: Remember the `<-` operator. You will use it frequently in R to assign values to variables. 
+
+
+### Character strings
+
+R isn't only for handling numbers. We can also handle text, using what we call character strings. To treat text as a character string, we must put quotation marks `"` around it. 
+
+Here, we make a variable called `x2` and put the character string `"Hello"` inside it:
+
+```{r}
+x2 <- "Hello"
+```
+
+We can use the `paste()` function to combine strings together. 
+
+```{r}
+
+paste(x2, "everybody!")
+
+```
+NOTE: When we give a function multiple arguments, the arguments are separated by a comma `,`. 
+
+
+
+### Vectors
+
+
+Vectors are the basic unit for storing information in R. We use the `c()` function like this:
+
+```{r}
+
+# combine the numbers 2, 4, and 6 into a vector,
+# and save the result in the object 'x3'
+x3 <- c(2, 4, 6)
+
+x3 # display the contents of x3
+
+
+```
+
+We can link vectors together:
+
+```{r}
+x4 <- c(8, 10, 12)
+c(x3, x4)
+
+```
+
+Character strings can also be vectors:
+
+```{r}
+x5 <- c("Mozambique", "United States")
+
+```
+
+When we apply a function to a vector, the function acts upon each individual element of the vector:
+
+```{r}
+paste0("Country: ", x5)
+
+x4 * 100
+
+```
+
+If we want a specific element of a vector, we use square brackets `[]` to say which one we want. We don't include a space between the vector and the brackets:
+```{r}
+
+x4[3]
+```
+
+### Creating different types of vectors
+
+We can create a sequence of numbers using the `:` symbol:
+```{r}
+10:20
+```
+
+The `seq()` function does the same thing, but we can optionally use a different step size using the `by =` argument
+
+```{r}
+seq(from = 10, to = 20, by = 2)
+```
+
+To create a vector of random numbers, we can use the `sample()` function:
+
+```{r}
+# Get 15 numbers, drawing randomly from the numbers 3, 4, 5, 6 and 7
+# - After drawing a number, replace it so it can be drawn again later
+sample(x = 1:10, size = 15, replace = TRUE)
+```
+
+### Using the R help documentation
+
+How are we supposed to know that, for example, the `sample()` function takes `x`, `size` and `replace` as arguments? Use the R help documentation:
+
+```{r, eval=FALSE}
+help("sample")
+```
+
+In the section "Usage", the documentation shows:
+```{text }
+sample(x, size, replace = FALSE, prob = NULL)
+```
+This means that `sample()` requires values for `x` and `size`. If we do not specify anything for `replace` or `prob`, it will use default values. 
+
+In the section "Arguments", we see what the function expects to receive for `x` and `size`:
+
+```{text}
+x	
+either a vector of one or more elements from which to choose, or a positive integer. See ‘Details.’
+
+size	
+a non-negative integer giving the number of items to choose.
+```
+
+
+### Logical operators (TRUE and FALSE)
+
+We can use R to test whether certain conditions are true or false, for example:
+
+```{r}
+
+3 < 4
+4 < 3
+5 == 5   # NOTE: we use two equals signs == to test for equality
+
+```
+
+Logical operators are often useful in testing each element of a vector:
+
+```{r}
+
+x5 <- c(4,6,8,10,12,14)
+
+# is the number 3 in the numbers 4, 6, 8, 10, 12 or 14 ?
+3 %in% x5
+
+# test each element of x5 to see if it's greater than 6
+x5 > 6
+
+# are any elements of x5 greater than 9?
+any(x5 > 9)
+
+# are all elements of x5 greater than 9?
+all(x5 > 9)
+
+# give me the elements of x5 that are greater than 9
+x5[x5 > 9]
+
+
+```
+
+### Other R object types
+
+- A **matrix** is like a vector, but has rows and columns. Matrices must all contain the same variable type (numeric, character, logical).
+
+```{r}
+object1 <- matrix(1:9, ncol = 3)
+object1
+
+```
+We can get specific elements of a matrix by using square brackets and a comma `[,]`. We select rows on the left side of the comma, and columns on the right size of the comma.
+
+```{r}
+
+# select columns 2 and 3
+object1[, c(2,3)]
+
+# select row 2, and columns 2 and 3
+object1[2, 2:3]   
+```
+
+A **list** is like a file cabinet whose drawers can contain anything.
+
+```{r}
+
+object2 <- list(a = 1:5, b = matrix(1:9, ncol = 3), c = "Some text")
+object2
+
+```
+
+We can retrieve an element of a list by using double brackets `[[]]`.
+
+```{r}
+object2[[3]]   # use the position number
+object2[["c"]] # use the element name
+
+```
+
+A **data frame** is a structure for spreadsheet data, much like Excel. Each row typically describes the unit of analysis (e.g. subjects, cities, hospitals, etc.) and the columns contain information about the units (e.g. height, population size, etc.). 
+
+```{r}
+
+object3 <- data.frame(
+  var1 = 1:6,
+  var2 = c("a","b","c","d","e","f")
+)
+object3
+
+```
+
+We retrieve variables from a data frame by using the dollar sign `$` operator.
+
+```{r}
+object3$var2
+```
+
+
+### Reading data into R: CSV files
+
+Read a CSV file from an online link, and save the data as a 'data frame' called `dat1`.
+
+```{r cars}
+
+dat1 <- read.csv("http://www.math.uah.edu/stat/data/Galton.csv", as.is = TRUE)
+
+```
+
+More typically, you will use `read.csv()` to read data from a file on your computer:
+
+```{r eval=FALSE}
+dat2 <- read.csv("C:/Users/you/path/to/filename.csv") # just an example
+```
+
+### Getting information about your data frame
+
+```{r}
+# See the structure of the data frame, including variables names and data types
+str(dat1)
+
+# Get the number of rows
+nrow(dat1)
+
+# Get the number of columns
+ncol(dat1)
+
+```
+
+```{r eval=FALSE}
+# Open a new window to see the data as a spreadsheet
+View(dat1)
+```
+
+
+### Creating and changing variables
+
+To access variables within a data frame, recall that we use the `$` dollar sign operator. For example, this command takes the information in the `Height` variable (within `dat1`) and calculates the mean height. 
+
+```{r}
+mean(dat1$Height)
+```
+
+
+We can create new variables using the `<-` operator, as before:
+
+```{r}
+# create a variable with height as feet, rather than inches
+# - there are 12 inches in a foot
+
+dat1$Height_feet <- dat1$Height / 12
+
+```
+
+
+To create a new variable conditional on the levels of another variable, we can use the `ifelse()` function:
+
+```{r}
+
+# if 'Height' is greater than 65 inches, make 'Height2' equal to 1
+#   otherwise make 'Height2' equal to 0
+dat1$Height2 <- ifelse(dat1$Height > 65, yes = 1, no = 0)
+```
+
+Confused about how to use `ifelse()`? Read the help documentation with `help("ifelse")`. 
+
+Here's how you would accomplish the same tasks using the `dplyr` package. I strongly recommend using `dplyr` as your primary way to handle data frames. You can find good tutorials and videos online, like [this](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) and [this](https://www.youtube.com/watch?v=aywFompr1F4). 
+```{r}
+dat2 <- dat1 %>%
+  mutate(
+    Height_feet = Height / 12,
+    Height2 = ifelse(Height > 65, 1, 0) )
+
+```
+
+### Selecting rows and columns of a data frame
+
+The `subset()` function is for selecting particular rows and columns. Note that we test whether two objects are equal using the `==` operator, with two equality symbols. 
+```{r}
+# create a data frame called 'dat3' from 'dat2' that includes 
+#   only the rows with male gender
+dat3 <- subset(dat2, Gender == "M")
+
+# create a data frame called 'dat4' from 'dat2' that only 
+#   contains the variables 'Gender' and 'Height', AND
+#   keeps rows with Height > 65
+dat4 <- subset(dat2, Height > 65, select = c("Gender", "Height"))
+
+```
+
+We can do the same thing using `dplyr` functions:
+
+```{r}
+dat4 <- dat2 %>%
+  filter(Height > 65) %>%
+  select(Gender, Height)
+```
+
+Notice how the commands are linked using the pipe operator `%>%`. 
+
+
+### Descriptive statistics
+
+```{r}
+# For categorical variables, get counts for each level
+table(dat1$Gender)
+
+# Get propotions by dividing the counts by the total number of observations
+table(dat1$Gender) / nrow(dat1)
+
+
+```
+
+Rather than using base R, we can use the `gmodels` package for getting frequencies more easily. We will use the `CrossTable()` function from the `gmodels` package.
+
+```{r message=FALSE, warning=FALSE}
+library(gmodels)
+CrossTable(dat1$Gender)
+
+```
+
+We can get a frequency table for two variables at the same time. Recall that we created the `Height2` variable in the section "Creating and changing variables". 
+
+```{r}
+CrossTable(dat1$Gender, dat1$Height2)
+```
+
+The `Cell Contents` box explains what each number represents. This table contains a lot of information, so you may want to spend time to understand it thoroughly. For example, using the upper-right box, convince yourself that the following interpretations are correct:
+
+- "132": The number of subjects who are women and greater than 65 inches tall.
+- "71.653": The Chi-square contribution of this cell (refers to Chi-square test of independence). 
+- "0.305": Among women, 30.5% are greater than 65 inches tall. 
+- "0.899": Among subjects greater than 65 inches tall, 23.4% are women. 
+- "0.147": Among all subjects, 14.7% are both women and greater than 65 inches tall. 
+
+To run a Chi-square test of whether two categorical variables are correlated, we do:
+
+```{r}
+chisq.test(dat1$Gender, dat1$Height2)
+```
+If the p-value is less than 0.05, we say there is evidence to reject the null hypothesis that the variables are independent. If the p-value is more than 0.05, we say there is not enough evidence to reject the null hypothesis. 
+
+
+### Describing data with graphics
+
+Recall that we're using a dataset about height, which we retrieved from online:
+
+```{r}
+dat1 <- read.csv("http://www.math.uah.edu/stat/data/Galton.csv", as.is = TRUE)
+```
+
+To describe a single continuous variable, create a histogram with the `hist()` function:
+
+```{r}
+
+hist(
+  x = dat1$Height, 
+  breaks = 20,   # how many groups to use
+  xlab = "Height",  # the label below the x-axis
+  main = "Distribution of height"
+)
+
+```
+
+To show the relationship between two continuous variables, use a scatterplot with the `plot()` function:
+
+```{r}
+
+plot(
+  x = dat1$Father, 
+  y = dat1$Height, 
+  main = "",        # No main title
+  xlab = "Father's height (inches)",
+  ylab = "Child's height (inches)"
+)
+
+fit1 <- lm(Height ~ Father, data = dat1)  # fit a linear regression
+abline(fit1)   # show the line of best fit on the plot
+```
+
+To show the relationship between a categorical and continuous variable, use a barplot:
+
+```{r}
+
+mean_height_males <- mean(dat1[dat1$Gender == "M", "Height"])
+mean_height_females <- mean(dat1[dat1$Gender == "F", "Height"])
+
+barplot(
+  height = c(mean_height_males, mean_height_females),
+  names.arg = c("Males", "Females"),
+  ylab = "Height (inches)",
+  col = c("cornflowerblue", "orange"),
+  main = "Average height for males and females"
+)
+
+```
+
+These graphics are standard ways that researchers present information in scientific articles. For more advanced ways to visualize information, I recommend the `ggplot2` package. Here is a [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) showing different types of visualizations you can create. 
+
+
+### Linear regression
+
+Regression analysis is a way to determine whether certain factors are associated with an outcome, and to what extent. For example, we might be interested in whether a father's height is associated with the height of his child. With regression, we can answer the following questions about the people in our data set:
+
+- Did taller fathers tend to have taller children? (sign of the coefficient)
+- If a father was 1 inch taller, how much taller would we expect his child to be? (magnitude of the coefficient)
+- How improbable would this result be if there's truly no association between father and child heights? (p-value)
+
+Using the dataset we got from online, we can answer these questions:
+
+```{r}
+dat1 <- read.csv("http://www.math.uah.edu/stat/data/Galton.csv", as.is = TRUE)
+
+
+fit1 <- lm(Height ~ Father, data = dat1)
+summary(fit1)
+
+```
+
+We used the function `lm()` to run a linear regression, where `Height` (child's height) is our outcome of interest and `Father` (father's height) is our only predictor. In general, we specify formulas as `outcome ~ predictor1 + predictor2` if there are two predictors, for example, where the outcome variable is on the left side of the tilde `~`. We stored the results of the regression into an object called `fit1` and asked for a summary for the results. 
+
+In the column `Estimate`, we see that for each 1-inch increase in height of the father, we expect that the child's height is 0.399 inches higher. This result is statistically significant, because the p-value (`Pr(>|t|)` column) is less than 0.05. The 3 stars indicate the level of statistical signficance. Together these results tell us _whether_ a variable matters (p-value) and _how much_ it affects our outcome (coefficient estimate).
+
+We can include other predictors that we believe help us understand what makes some children shorter or taller, for example, the child's gender and their mother's height. I also included `Kids` (number of children in the family), a variable we do not expect to be associated with a child's height. 
+
+```{r}
+fit2 <- lm(Height ~ Father + Mother + Gender + Kids, data = dat1)
+summary(fit2)
+```
+Note that the `Kids` variable has a p-value above 0.05, so it is not statistically significant. 
+
+To get _confidence intervals_ around the coefficients, we use the `confint()` function.
+
+```{r}
+confint(fit2)
+
+# Coefficients and confidence intervals together
+cbind(coef(fit2), confint(fit2))
+```
+### Logistic regression
+
+The previous section on linear regression is useful when the outcome is a continuous variable, like height. Often, however, the outcome is a yes-or-no variable. This is also known as a binary or dichotomous variable. In this case, we use logistic regression.
+
+- Continuous outcome? Use linear regression
+- Binary outcome? Use logistic regression
+
+First, we convert the continuous `Height` variable into a binary variable, based on whether a child's height is greater than 65. 
+
+```{r}
+
+dat1$Height2 <- ifelse(dat1$Height > 65, 1, 0)
+
+```
+
+Then, we use a function called `glm()`, which stands for "generalized linear model". We specify that the regression family is "binomial" to tell `glm()` that we want to do logistic regression. 
+
+```{r}
+
+fit3 <- glm(
+  Height2 ~ Father + Mother + Gender + Kids, 
+  data = dat1, 
+  family = "binomial"
+)
+
+summary(fit3)
+
+```
+
+Interpreting the results of logistic regression are similar to linear regression in some ways.
+
+- If the coefficient is positive, it means that a higher level of the factor is associated with a higher level of the outcome. For example, higher father's height is associated with higher child's height.
+- If the p-value on a coefficient is less than 0.05, the factor is statistically significant. 
+
+However, the interpretation for logistic regression is also different. We need to _exponentiate_ the coefficients to interpret them as _odds ratios_. 
+
+```{r}
+odds_ratio <- exp(coef(fit3))
+confidence_intervals <- exp(confint(fit3))
+
+# Coefficients and confidence intervals together
+results <- cbind(odds_ratio, confidence_intervals)
+round(results, digits = 3)
+
+```
+
+We interpret the odds ratios as:
+
+- "GenderM": The odds that the child is >65 inches is 58.1 times higher if the child is male, compared to female. 
+- "Father": The odds that the child is >65 inches is 1.48 times higher if the father is 1 inch taller. 
+
+Regression methods are a fundamental tool for data analysts. Many resources are available for self-learning online, including this [free textbook](http://onlinestatbook.com/2/regression/intro.html). 
+
+&nbsp;
+
+&nbsp;
+
+
+
+
+
+
+
+

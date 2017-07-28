@@ -25,13 +25,22 @@ library(gmodels)
 
 
 # load the dataset about child heights 
+
 dat1 <- read.csv("http://www.math.uah.edu/stat/data/Galton.csv", as.is = TRUE)
 
+library(dplyr)
+
+
+
 # get crosstable of the 'Gender' variable
-CrossTable(dat1$Gender)
+CrossTable(dat1$Gender, dat1$Father_groups)
+
 
 # Convert 'Height' into a categorical variable
 dat1$Height_groups <- cut(dat1$Height, breaks = c(0,65,70,999), right = FALSE)
+
+# read the help documentation about cut() 
+# to do the challenge
 
 #-- this does the same thing
 dat1 <- dat1 %>%
@@ -41,19 +50,30 @@ dat1 <- dat1 %>%
 # CHALLENGE
 # 1. Use the cut() function to group 'Father' into categories of your choice
 #
+dat1$Father_groups <- cut(
+  x = dat1$Father, 
+  breaks = c(0, 69, 73, 76, 999),
+  right = FALSE
+)
+
 # 2. Use the CrossTable() function to get counts and percentages 
 #    for your new variable
 #
+CrossTable(dat1$Father_groups)
+
 # 3. Use CrossTable() to get counts and percentages 
 #    for 'Gender' and 'Height_groups' at the same time
 #
-
+CrossTable(
+  x = dat1$Gender,
+  y = dat1$Height_groups
+)
 
 
 # The Chi-square test asks whether categorical variables are correlated
 # e.g. Does the distribution of height in this sample depend on gender?
 
-chisq.test(dat1$Gender, dat1$Height_groups)
+chisq.test(dat1$Gender, dat1$Father_groups)
 
 # Chi-square tells is WHETHER there is an associaion, but
 #   not the direction or magnitude of the association
@@ -75,9 +95,9 @@ dat3 <- dat1 %>%
 
 fit3 <- glm(height2 ~ Gender + Father, data = dat3, family = "binomial")
 
-dat_predictions$pred2 <- predict(fit3, newdata = dat_predictions, type = "response")
+# dat_predictions$pred2 <- predict(fit3, newdata = dat_predictions, type = "response")
 # plot(
-#   x = NULL, y = NULL, 
+#   x = NULL, y = NULL,
 #   xlim = c(60, 75), ylim = c(0, 1),
 #   xlab = "Father's height", ylab = "Probability",
 #   main = paste0("Prob(child's height > ", X, " | father's height)")
@@ -98,9 +118,17 @@ dat_predictions$pred2 <- predict(fit3, newdata = dat_predictions, type = "respon
 dat3$Father_groups <- cut(dat3$Father, breaks = c(0,68,70,72,74,999), right = FALSE)
 
 
+# glm = generalized linear model
+
 fit1 <- glm(height2 ~ Gender + Mother + Father_groups + Kids, 
   data = dat3, family = "binomial")
 summary(fit1)
+
+
+x <- 1:100
+median(x)
+mean(x)
+
 
 
 my_coefs <- coef(fit1)
@@ -115,7 +143,7 @@ my_confidence_intervals <- confint(fit1)
 # Z is our predictor of interest
 #
 
-exp(my_coefs) 
+exp(my_coefs)
 exp(my_confidence_intervals)
 
 
