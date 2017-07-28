@@ -86,13 +86,13 @@ Many software options are available for data analysis, but you might prefer R fo
     </tr>
     <tr>
         <td white-space: nowrap>Day 8, Wednesday, July 26</td>
-        <td>Finding and using R packages; loading data from other programs; graphing regression results</td>
+        <td>Finding and using R packages; loading data from other programs</td>
         <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day8_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 9, Thursday, July 27</td>
-        <td>TBD</td>
-        <td>Code</td>
+        <td>Using the 'gmodels' package for crosstables; categorical/factor variables; logistic regression</td>
+        <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day9_script.R">Code</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Day 10, Friday, July 28</td>
