@@ -97,7 +97,7 @@ Many software options are available for data analysis, but you might prefer R fo
     <tr>
         <td white-space: nowrap>Day 10, Friday, July 28</td>
         <td>Course review with summary tutorial (see "Code" link)</td>
-        <td>http://htmlpreview.github.io/?https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day10_review.html</td>
+        <td><a href="http://htmlpreview.github.io/?https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day10_review.html">Code</a></td>
     </tr>
 </table>
 
