@@ -90,13 +90,13 @@ Muitas opções de software estão disponíveis para análise de dados, mas voc�
     </tr>
     <tr>
         <td white-space: nowrap>Dia 9, 27 de julho</td>
-        <td>Usando o pacote 'gmodels' para obter crosstables; variáveis categóricas / fatores; regressão logística</td>
+        <td>Usando o pacote 'gmodels' para obter crosstables; variáveis categóricas / fatores; regressão</td>
         <td><a href="https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day9_script.R">Código</a></td>
     </tr>
     <tr>
         <td white-space: nowrap>Dia 10, 28 de julho</td>
-        <td>TBD</td>
-        <td>Código</td>
+        <td>Revisão do curso com o tutorial de resumo (consulte o link "Código")</td>
+        <td><a href="http://htmlpreview.github.io/?https://github.com/rsoren/r_training_beira2017/blob/master/scripts/day10_review.html">Código</a></td>
     </tr>
 </table>
 
